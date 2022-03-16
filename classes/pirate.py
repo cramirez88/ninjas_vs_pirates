@@ -10,6 +10,15 @@ class Pirate:
         print(f"Name: {self.name}\nStrength: {self.strength}\nSpeed: {self.speed}\nHealth: {self.health}\n")
 
     def attack ( self , ninja ):
-        ninja.health -= self.strength
+        import random 
+        ninja_strength = random.randint(0, self.strength)
+        pirate_strength = random.randint(0, self.strength)
+        if pirate_strength > ninja_strength:
+             ninja.health -= self.strength
+             print(f'The ninja got recked! {self.health} remaining')
+        elif pirate_strength > ninja_strength:
+            print(f'The ninja took no damage {self.health} remaining')
+        else:
+            print(f'The ninja and pirate took equal amounts of damage, which cancel each other out: {self.health} remaining')
         return self
 
